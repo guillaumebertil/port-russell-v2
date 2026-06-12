@@ -12,6 +12,6 @@ class Catway extends Model
     
     public function reservations(): HasMany
     {
-        return $this->hasMany(Reservation::class);
+        return $this->hasMany(Reservation::class, 'catwayNumber');
     }
 }

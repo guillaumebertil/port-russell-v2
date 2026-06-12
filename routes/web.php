@@ -10,5 +10,6 @@ Route::get('/', function () {
 });
 
 Route::get('/catways', [CatwayController::class, 'index']);
+Route::get('catways/{id}', [CatwayController::class, 'show']);
 
 Route::get('/reservations', [ReservationController::class, 'index']);
