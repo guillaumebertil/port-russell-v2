@@ -38,11 +38,11 @@
             </li>
 
             <li>
-                <a href="">Catways</a>
+                <a href="/catways">Catways</a>
             </li>
             
             <li>
-                <a href="">Réservations</a>
+                <a href="/reservations">Réservations</a>
             </li>
 
             <li>
