@@ -9,7 +9,6 @@
                 <li class="list-item">- Gestion des catways (état, type, numéro)</li>
                 <li class="list-item">- Gestion des réservations avec vérification des disponibilités</li>
                 <li class="list-item">- Gestion des utilisateurs de la capitainerie</li>
-                <li class="list-item">- API REST complète</li>
             </ul>
         </div>
         </div>
