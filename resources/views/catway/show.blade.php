@@ -6,5 +6,6 @@
         @foreach ($reservations as $reservation)
             <p>{{ $reservation->boatName }}</p>
         @endforeach
+        <a href="/catways/edit/{{ $catway->id }}">Modifier</a>
     </div>
 </x-layout>
