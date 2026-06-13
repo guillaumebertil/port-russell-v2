@@ -11,5 +11,5 @@
                 <li class="list-item">- Gestion des utilisateurs de la capitainerie</li>
             </ul>
         </div>
-        </div>
+    </div>
 </x-layout>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCatwayRequest;
 use App\Models\Catway;
 use Illuminate\Http\Request;
 
@@ -24,15 +25,19 @@ class CatwayController extends Controller
      */
     public function create()
     {
-        //
+        return view('catway.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCatwayRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        Catway::create($validated);
+
+        return redirect('/catways');
     }
 
     /**
