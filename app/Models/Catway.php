@@ -9,9 +9,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Catway extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'catwayNumber',
+        'catwayType',
+        'catwayState',
+    ];
     
     public function reservations(): HasMany
     {
-        return $this->hasMany(Reservation::class);
+        return $this->hasMany(Reservation::class, 'catwayNumber');
     }
 }

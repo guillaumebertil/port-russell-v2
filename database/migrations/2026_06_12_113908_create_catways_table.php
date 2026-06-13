@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('catways', function (Blueprint $table) {
             $table->id();
-            $table->integer('catwayNumber');
+            $table->integer('catwayNumber')->unique();
             $table->enum('catwayType', ['short', 'long']);
             $table->string('catwayState');
             $table->timestamps();

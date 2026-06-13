@@ -10,5 +10,11 @@ Route::get('/', function () {
 });
 
 Route::get('/catways', [CatwayController::class, 'index']);
+Route::get('/catways/add', [CatwayController::class, 'create']);
+Route::post('/catways', [CatwayController::class, 'store']);
+Route::get('catways/{id}', [CatwayController::class, 'show']);
+Route::get('catways/edit/{id}', [CatwayController::class, 'edit']);
+Route::put('catways/{id}', [CatwayController::class, 'update']);
+Route::delete('catways/{id}', [CatwayController::class, 'destroy']);
 
 Route::get('/reservations', [ReservationController::class, 'index']);
