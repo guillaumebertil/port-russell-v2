@@ -87,6 +87,10 @@ class CatwayController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $catway = Catway::find($id);
+
+        $catway->delete();
+
+        return redirect('/catways');
     }
 }
