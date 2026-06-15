@@ -48,9 +48,13 @@ class ReservationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(int $id)
     {
-        //
+        $reservation = Reservation::find($id);
+
+        return view('reservation.show', [
+            'reservation'   => $reservation,
+        ]);
     }
 
     /**

@@ -20,3 +20,4 @@ Route::delete('catways/{id}', [CatwayController::class, 'destroy']);
 Route::get('/reservations', [ReservationController::class, 'index']);
 Route::get('/reservations/add', [ReservationController::class, 'create']);
 Route::post('/reservations', [ReservationController::class, 'store']);
+Route::get('/reservations/{id}', [ReservationController::class, 'show']);

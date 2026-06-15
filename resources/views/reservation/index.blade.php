@@ -11,6 +11,7 @@
             <p>Date de départ: {{ $reservation->startDate }}</p>
             <p>Date d'arrivée: {{ $reservation->endDate }}</p>
             <p>Date de création: {{ $reservation->created_at->format('d/m/Y') }}</p>
+            <a href="/reservations/{{ $reservation->id }}">Infos</a>
         @endforeach
     </div>
 </x-layout>

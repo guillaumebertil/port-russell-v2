@@ -17,6 +17,11 @@ class Reservation extends Model
         'startDate',
         'endDate',
     ];
+
+    protected $casts = [
+        'startDate' => 'datetime',
+        'endDate'   => 'datetime',
+    ];
     
     public function catway(): BelongsTo
     {
