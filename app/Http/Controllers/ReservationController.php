@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreReservationRequest;
+use App\Models\Catway;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 
@@ -24,15 +26,23 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        //
+        $catways = Catway::all();
+
+        return view('reservation.create', [
+            'catways' => $catways,
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreReservationRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        Reservation::create($validated);
+
+        return redirect('/reservations');
     }
 
     /**
