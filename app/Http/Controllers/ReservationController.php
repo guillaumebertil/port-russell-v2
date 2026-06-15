@@ -6,6 +6,7 @@ use App\Http\Requests\StoreReservationRequest;
 use App\Http\Requests\UpdateReservationRequest;
 use App\Models\Catway;
 use App\Models\Reservation;
+use App\Services\ReservationService;
 
 class ReservationController extends Controller
 {
@@ -36,9 +37,13 @@ class ReservationController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreReservationRequest $request)
+    public function store(StoreReservationRequest $request, ReservationService $service)
     {
         $validated = $request->validated();
+
+        if (!$service->isAvailable($request->catwayNumber, $request->startDate, $request->endDate)) {
+            return back()->withErrors(['catwayNumber' => 'Le catway n\'est pas disponible à ces dates'])->withInput();
+        }
 
         Reservation::create($validated);
 
@@ -75,11 +80,15 @@ class ReservationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateReservationRequest $request, int $id)
+    public function update(UpdateReservationRequest $request, int $id, ReservationService $service)
     {
         $validated = $request->validated();
 
         $reservation = Reservation::find($id);
+
+        if (!$service->isAvailable($request->catwayNumber, $request->startDate, $request->endDate)) {
+            return back()->withErrors(['catwayNumber' => 'Le catway n\'est pas disponible à ces dates'])->withInput();
+        }
 
         $reservation->update($validated);
 
