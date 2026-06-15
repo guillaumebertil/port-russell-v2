@@ -7,7 +7,7 @@
         <p>Date de début: {{ $reservation->startDate->format('d/m/Y') }}</p>
         <p>Date de fin: {{ $reservation->endDate->format('d/m/Y') }}</p>
         
-        <a href="">Modifier</a>
+        <a href="/reservations/edit/{{ $reservation->id }}">Modifier</a>
         <form action="" method="POST">
             @csrf
             @method('DELETE')
