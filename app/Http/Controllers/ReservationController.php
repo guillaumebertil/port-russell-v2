@@ -89,8 +89,12 @@ class ReservationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(int $id)
     {
-        //
+        $reservation = Reservation::find($id);
+
+        $reservation->delete();
+
+        return redirect('/reservations');
     }
 }
