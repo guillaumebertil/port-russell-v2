@@ -9,6 +9,19 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Reservation extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'catwayNumber',
+        'clientName',
+        'boatName',
+        'startDate',
+        'endDate',
+    ];
+
+    protected $casts = [
+        'startDate' => 'datetime',
+        'endDate'   => 'datetime',
+    ];
     
     public function catway(): BelongsTo
     {

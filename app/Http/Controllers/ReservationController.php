@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreReservationRequest;
+use App\Http\Requests\UpdateReservationRequest;
+use App\Models\Catway;
 use App\Models\Reservation;
-use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
@@ -24,46 +26,75 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        //
+        $catways = Catway::all();
+
+        return view('reservation.create', [
+            'catways' => $catways,
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreReservationRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        Reservation::create($validated);
+
+        return redirect('/reservations');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(int $id)
     {
-        //
+        $reservation = Reservation::find($id);
+
+        return view('reservation.show', [
+            'reservation'   => $reservation,
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(int $id)
     {
-        //
+        $reservation = Reservation::find($id);
+
+        $catways = Catway::all();
+
+        return view('reservation.edit', [
+            'reservation' => $reservation,
+            'catways'     => $catways
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateReservationRequest $request, int $id)
     {
-        //
+        $validated = $request->validated();
+
+        $reservation = Reservation::find($id);
+
+        $reservation->update($validated);
+
+        return redirect('/reservations');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(int $id)
     {
-        //
+        $reservation = Reservation::find($id);
+
+        $reservation->delete();
+
+        return redirect('/reservations');
     }
 }
