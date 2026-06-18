@@ -52,6 +52,14 @@
     </div>
 
     <div class="navbar-end">
-        <a class="btn btn-error">Déconnexion</a>
+        @auth
+            <form action="/logout" method="POST">
+                @csrf
+                <button type="submit" class="btn bg-red-500">Déconnexion</button>
+            </form>
+
+            @else
+                <a href="/login" class="btn btn-success">Se connecter</a>
+        @endauth
     </div>
 </div>
