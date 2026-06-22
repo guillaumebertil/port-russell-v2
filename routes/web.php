@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/users/{user}', [UserController::class, 'show']);
     Route::get('/users/edit/{user}', [UserController::class, 'edit']);
     Route::put('/users/{user}', [UserController::class, 'update']);
+    Route::delete('/users/{user}', [UserController::class, 'destroy']);
 });
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
