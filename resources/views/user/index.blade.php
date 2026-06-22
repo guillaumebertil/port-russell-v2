@@ -5,4 +5,6 @@
             <p>Email: {{ $user->email }}</p>
         @endforeach
     </div>
+
+    <a href="/users/create">Ajouter un utilisateur</a>
 </x-layout>
