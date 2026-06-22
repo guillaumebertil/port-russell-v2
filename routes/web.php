@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/users/create', [UserController::class, 'create']);
     Route::post('/users', [UserController::class, 'store']);
     Route::get('/users/{user}', [UserController::class, 'show']);
+    Route::get('/users/edit/{user}', [UserController::class, 'edit']);
+    Route::put('/users/{user}', [UserController::class, 'update']);
 });
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
