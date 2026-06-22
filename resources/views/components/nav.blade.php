@@ -46,7 +46,7 @@
             </li>
 
             <li>
-                <a href="">Utilisateurs</a>
+                <a href="/users">Utilisateurs</a>
             </li>
         </ul>
     </div>
