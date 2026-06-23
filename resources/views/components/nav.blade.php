@@ -45,9 +45,11 @@
                 <a href="/reservations">Réservations</a>
             </li>
 
-            <li>
-                <a href="/users">Utilisateurs</a>
-            </li>
+            @if (auth()->user()?->isAdmin)
+                <li>
+                    <a href="/users">Utilisateurs</a>
+                </li>
+            @endif
         </ul>
     </div>
 
