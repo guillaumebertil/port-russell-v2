@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCatwayRequest;
 use App\Http\Requests\UpdateCatwayRequest;
 use App\Models\Catway;
-use Illuminate\Http\Request;
 
 class CatwayController extends Controller
 {
