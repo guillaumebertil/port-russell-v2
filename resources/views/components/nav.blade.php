@@ -20,7 +20,7 @@
             <li><a>Item 3</a></li>
         </ul>
         </div>
-        <a class="btn btn-ghost text-xl">
+        <a href="/" class="btn btn-ghost text-xl">
             <img
                 src="/assets/img/logo.png"
                 alt="logo"
@@ -34,7 +34,7 @@
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
             <li>
-                <a href="">Tableau de bord</a>
+                <a href="/">Tableau de bord</a>
             </li>
 
             <li>
