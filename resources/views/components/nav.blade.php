@@ -34,7 +34,7 @@
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
             <li>
-                <a href="/">Tableau de bord</a>
+                <a href="/dashboard">Tableau de bord</a>
             </li>
 
             <li>

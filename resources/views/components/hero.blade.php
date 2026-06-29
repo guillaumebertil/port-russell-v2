@@ -1,5 +1,5 @@
-<div class="hero h-full">
-    <div class="hero-content text-primary-content text-center">
+<div class="hero h-full flex flex-col items-center">
+    <div class="hero-content text-accent-content text-center">
         <div class="max-w-md lg:max-w-3xl">
             <h1 class="mb-5 text-5xl font-bold">Présentations</h1>
             

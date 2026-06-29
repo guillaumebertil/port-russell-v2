@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('home');
+    return view('pages.home');
 });
 
 Route::middleware('auth')->group(function () {
@@ -29,6 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/reservations/edit/{id}', [ReservationController::class, 'edit']);
     Route::put('/reservations/{id}', [ReservationController::class, 'update']);
     Route::delete('/reservations/{id}', [ReservationController::class, 'destroy']);
+
+    Route::get('/dashboard', function() {
+        return view('pages.dashboard');
+    });
 
     Route::middleware('isAdmin')->group(function () {
         Route::get('/users', [UserController::class, 'index']);
