@@ -14,7 +14,7 @@
 
     <main
         class="flex flex-1 justify-center items-center bg-cover bg-center bg-white/80 bg-blend-lighten"
-        style="background-image: url('/assets/img/background.png')"
+        style="background-image: url('/assets/img/background.png'); background-attachment: fixed;"
     >
         {{ $slot }}
     </main>
