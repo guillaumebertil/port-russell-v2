@@ -1,4 +1,4 @@
-<div class="navbar bg-base-100 shadow-sm max-w-7xl">
+<div class="navbar bg-base-100 shadow-sm max-w-7xl rounded-2xl">
     <div class="navbar-start">
         <div class="dropdown">
         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
