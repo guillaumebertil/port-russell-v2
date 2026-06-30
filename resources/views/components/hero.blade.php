@@ -13,11 +13,7 @@
             </ul>
 
             @auth
-                <form action="/logout" method="POST">
-                    @csrf
-                    <button type="submit" class="btn bg-red-500">Déconnexion</button>
-                </form>
-
+                <a href="/dashboard" class="btn btn-accent">Accéder au dashboard</a>
                 @else
                     <a href="/login" class="btn btn-success">Se connecter</a>
             @endauth

@@ -1,5 +1,5 @@
 <x-layout class="mx-auto">
-    <div class="card bg-base-100/90 w-sm md:w-2xl shadow-sm">
+    <div class="card bg-base-100/90 w-2xl shadow-sm">
         <div class="card-body flex justify-center items-center">
             <h1 class="card-title text-4xl">Modifier un catway</h1>
             <form action="/catways/{{ $catway->id }}" method="POST" class="w-full flex flex-col items-center">
